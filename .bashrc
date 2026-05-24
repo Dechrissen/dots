@@ -80,7 +80,7 @@ alias banjovps='TERM=xterm-256color ssh -i ~/.ssh/banjo -p 801 dechrissen@banjos
 alias vps='TERM=xterm-256color ssh -i ~/.ssh/vps -p 8012 derek@derekandersen.net'
 
 # Other aliases
-alias pushdots='cd ~/dotfiles && git pull && cd scripts && chmod u+x pull-local-changes-into-repo.sh && ./pull-local-changes-into-repo.sh'
+alias dots='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias c='clear'
 alias ff='fastfetch'
 alias define='dict -d wn' # define a word with the WordNet database
@@ -109,5 +109,3 @@ fi
 # up and down arrow keys search history related to current partial input
 bind '"\e[A": history-search-backward'
 bind '"\e[B": history-search-forward'
-source /usr/share/nvm/init-nvm.sh
-. "/home/derek/.local/share/bob/env/env.sh"
