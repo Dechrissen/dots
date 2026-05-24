@@ -1,0 +1,41 @@
+@define-color foreground #eeeeee;
+@define-color foreground-inactive #aaaaaa;
+@define-color background #000000;
+
+* {
+    font-family: FontAwesome, RobotoMonoNerdFont;
+    font-size: 16px;
+    padding: 0px;
+    padding-left: 2px;
+    padding-right: 2px;
+    margin: 0;
+}
+
+#waybar {
+    color: @foreground;
+    background-color: @background;
+}
+
+#workspaces button {
+    color: @foreground;
+}
+
+#workspaces button.empty {
+    color: @foreground-inactive;
+}
+
+#workspaces button.hover {
+    border-radius: 0;
+}
+
+#memory,
+#cpu,
+#clock,
+#pulseaudio,
+#battery,
+#language,
+#network,
+#bluetooth,
+#tray {
+    padding-right: 1em 
+}
