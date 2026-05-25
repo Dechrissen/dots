@@ -109,3 +109,5 @@ fi
 # up and down arrow keys search history related to current partial input
 bind '"\e[A": history-search-backward'
 bind '"\e[B": history-search-forward'
+
+source /usr/share/nvm/init-nvm.sh
