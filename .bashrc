@@ -57,10 +57,10 @@ hex_to_color() {
   printf '\[\e[38;2;%d;%d;%dm\]' "$R" "$G" "$B"
 }
 
-# gruvbox material dark colors
-_COLOR1="$(hex_to_color e78a4e)" # orange
-_COLOR2="$(hex_to_color 7daea3)" # blue
-_COLOR3="$(hex_to_color a9b665)" # green
+# kanagawa colors
+_COLOR1="$(hex_to_color 7e9cd8)" # crystal blue  — username
+_COLOR2="$(hex_to_color 7aa89f)" # wave aqua     — hostname
+_COLOR3="$(hex_to_color dcd7ba)" # fuji white    — path
 _RESET="\[\e[0m\]"
 PS1="${_COLOR1}\u${_RESET}@${_COLOR2}\h${_RESET} ${_COLOR3}\w${_RESET} \$ ${_RESET}"
 

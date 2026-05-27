@@ -1,5 +1,6 @@
 {
     "layer": "top",
+    "height": 30,
     "spacing": 4,
     "modules-left": ["hyprland/workspaces", "hyprland/mode"],
     "modules-center": ["clock"],
@@ -8,58 +9,59 @@
         "max-length": 50
     },
     "tray": {
-				"spacing": 0
+        "icon-size": 18,
+        "spacing": 10
     },
     "hyprland/workspaces": {
-				"format": "{name} {windows}",
-        "format-window-separator": " ",
-        "window-rewrite-default": "",
+        "format": "{name}{windows}",
+        "format-window-separator": "",
+        "window-rewrite-default": "",
         "window-rewrite": {
-            "class<com.obsproject.Studio>": "",
-            "class<librewolf>": "",
-            "class<firefox>": "",
-            "class<steam>": "",
-            "class<gimp>": "",
-            "class<discord>": "",
-            "class<signal>": "",
-            "class<Spotify>": "",
-            "class<vlc>": "󰕼",
-            "class<kitty>": "󰞷",
-            "class<nemo>": "",
-            "class<org.keepassxc.KeePassXC>": "",
-            "class<imv>": "",
-	    "class<org.kde.kate>": "",
-            "class<codium>": "",
-	    "class<Godot>": "",
-	    "class<org.coolercontrol.CoolerControl>": ""
+            "class<com.obsproject.Studio>": " ",
+            "class<librewolf>": " ",
+            "class<firefox>": " ",
+            "class<steam>": " ",
+            "class<gimp>": " ",
+            "class<discord>": " ",
+            "class<signal>": " ",
+            "class<Spotify>": " ",
+            "class<vlc>": " 󰕼",
+            "class<kitty>": " 󰞷",
+            "class<nemo>": " ",
+            "class<org.keepassxc.KeePassXC>": " ",
+            "class<imv>": " ",
+            "class<org.kde.kate>": " ",
+            "class<codium>": " ",
+            "class<Godot>": " ",
+            "class<org.coolercontrol.CoolerControl>": " "
         },
         "on-click": "activate",
         "sort-by-number": true
     },
-		"network": {
-				"format-ethernet": "",
-				"tooltip-format-ethernet": "{ifname} ({ipaddr})",
-				"format-disconnected": "",
-				"tooltip-format-disconnected": "No connection"
-		},
+    "network": {
+        "format-ethernet": "",
+        "tooltip-format-ethernet": "{ifname} ({ipaddr})",
+        "format-disconnected": "",
+        "tooltip-format-disconnected": "No connection"
+    },
     "battery": {
         "format": "{icon} {capacity}%",
         "format-icons": ["", "", "", "", ""]
     },
     "clock": {
-				"format": "{:%d %b %Y — %I:%M %p}",
-				"tooltip-format": "<tt>{calendar}</tt>",
-				"calendar": {
-								"mode": "month",
-								"on-scroll": 1,
-								"format": {
-												"today": "<span color='#ff6699'><b><u>{}</u></b></span>"
-								}
-				},
-				"actions": {
-								"on-scroll-up": "shift_down",
-								"on-scroll-down": "shift_up"
-				}
+        "format": "{:%a %d %b · %I:%M %p}",
+        "tooltip-format": "<tt>{calendar}</tt>",
+        "calendar": {
+            "mode": "month",
+            "on-scroll": 1,
+            "format": {
+                "today": "<span color='#ff6699'><b><u>{}</u></b></span>"
+            }
+        },
+        "actions": {
+            "on-scroll-up": "shift_down",
+            "on-scroll-down": "shift_up"
+        }
     },
     "cpu": {
         "format": " {usage}%",
@@ -67,7 +69,7 @@
     },
     "memory": {
         "format": " {}%",
-	"tooltip": true
+        "tooltip": true
     },
     "pulseaudio": {
         "scroll-step": 1, // %, can be a float
@@ -89,15 +91,15 @@
         "on-click": "pavucontrol"
     },
     "custom/power": {
-        "format" : "⏻ ",
-		"tooltip": false,
-		"menu": "on-click",
-		"menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
-		"menu-actions": {
-			"shutdown": "shutdown",
-			"reboot": "reboot",
-			"suspend": "systemctl suspend"
-                        //"hibernate": "systemctl hibernate" // doesn't work properly, need to follow https://wiki.archlinux.org/title/Power_management/Suspend_and_hibernate#Hibernation
-		}
+        "format": "⏻ ",
+        "tooltip": false,
+        "menu": "on-click",
+        "menu-file": "$HOME/.config/waybar/power_menu.xml",
+        "menu-actions": {
+            "shutdown": "shutdown",
+            "reboot": "reboot",
+            "suspend": "sleep 3 && systemctl suspend"
+            //"hibernate": "systemctl hibernate"
+        }
     }
 }

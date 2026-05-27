@@ -3,12 +3,12 @@
   "display": {
     "separator": ": "
 	},
-	"logo": {
-    "type": "small",
-    "padding": {
-        "top": 1,          // Top padding
-        "left": 2,         // Left padding
-        "right": 2         // Right padding
+	    "logo": {
+            "type": "auto",
+        "padding": {
+        "top": 0,          // Top padding
+        "left": 1,         // Left padding
+        "right": 1         // Right padding
     }
   },
   "modules": [
@@ -16,7 +16,7 @@
     //"separator",
     {
       "type": "host",
-      "key": "Machine",
+      "key": "Host",
       "format": "{vendor} {name}"
     },
     {
@@ -25,10 +25,16 @@
         "format": "{name}"
     },
     "kernel",
+    {
+        "type": "Command",
+        "key": "Install Age",
+        "text": "bash -c 'installed=$(date -d \"$(awk -F\"[][]\" \"NR==1{print \\$2}\" /var/log/pacman.log)\" +%s); now=$(date +%s); diff=$((now-installed)); years=$((diff/86400/365)); months=$(((diff/86400%365)/30)); days=$((diff/86400%30)); out=\"\"; [ $years -gt 0 ] && out=\"${years} years\"; [ $months -gt 0 ] && out=\"${out:+$out, }${months} months\"; [ $days -gt 0 ] && out=\"${out:+$out, }${days} days\"; echo \"${out:-today}\"'"
+    },
     "uptime",
     "packages",
     "shell",
     "de",
+    "lm",
     "wm",
     //"wmtheme",
     //"theme",

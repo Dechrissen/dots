@@ -1,41 +1,119 @@
-@define-color foreground #eeeeee;
-@define-color foreground-inactive #aaaaaa;
-@define-color background #000000;
+@define-color bg      #1f1f28;
+@define-color bg1     #2a2a37;
+@define-color bg2     #363646;
+@define-color bg3     #54546d;
+@define-color fg      #dcd7ba;
+@define-color fg-dim  #727169;
+@define-color yellow  #7e9cd8;
+@define-color red     #e46876;
 
 * {
-    font-family: FontAwesome, RobotoMonoNerdFont;
-    font-size: 20px;
-    padding: 0px;
-    padding-left: 2px;
-    padding-right: 2px;
+    font-family: FontAwesome, "0xProto Nerd Font";
+    font-size: 16px;
+    padding: 0;
     margin: 0;
+    border: none;
+    border-radius: 0;
+    min-height: 0;
 }
 
 #waybar {
-    color: @foreground;
-    background-color: @background;
+    background: @bg;
+    color: @fg;
+    border-bottom: 1px solid @bg3;
+}
+
+/* ── Workspaces ─────────────────────────────────── */
+
+#workspaces {
+    margin: 0 4px;
 }
 
 #workspaces button {
-    color: @foreground;
+    color: @fg-dim;
+    padding: 0 10px;
+    margin-bottom: 1px;
+    min-width: 2.5em;
+    background: transparent;
+    border-bottom: 2px solid transparent;
+    transition: color 0.12s, border-color 0.12s;
+}
+
+#workspaces button.active {
+    color: @fg;
+    border-bottom: 2px solid @yellow;
 }
 
 #workspaces button.empty {
-    color: @foreground-inactive;
+    color: @bg2;
 }
 
-#workspaces button.hover {
+#workspaces button:hover {
+    color: @fg;
+    background: @bg1;
+}
+
+/* ── Right-side modules ─────────────────────────── */
+
+#clock,
+#cpu,
+#memory,
+#network,
+#pulseaudio,
+#battery,
+#tray,
+#custom-power {
+    padding: 0 12px;
+}
+
+#clock {
+    font-weight: bold;
+}
+
+/* ── Tooltips ───────────────────────────────────── */
+
+tooltip {
+    background: @bg1;
+    border: 1px solid @bg3;
+    border-radius: 4px;
+}
+
+tooltip label {
+    color: @fg;
+    padding: 4px 8px;
+}
+
+/* ── Menus / dropdowns ──────────────────────────── */
+
+menu {
+    background: @bg1;
+    border: 1px solid @bg3;
+    border-radius: 4px;
+    padding: 2px 0;
+}
+
+menuitem {
+    color: @fg;
+    padding: 2px 8px;
+}
+
+menuitem:hover {
+    background: @bg2;
     border-radius: 0;
 }
 
-#memory,
-#cpu,
-#clock,
-#pulseaudio,
-#battery,
-#language,
-#network,
-#bluetooth,
-#tray {
-    padding-right: 1em 
+separator {
+    background: @bg3;
+    margin: 4px 0;
+    min-height: 1px;
+}
+
+/* ── Battery states ──────────────────────────────── */
+
+#battery.warning {
+    color: @yellow;
+}
+
+#battery.critical {
+    color: @red;
 }
