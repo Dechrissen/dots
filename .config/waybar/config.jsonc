@@ -40,7 +40,7 @@
     },
     "network": {
         "format-ethernet": "",
-        "tooltip-format-ethernet": "{ifname} ({ipaddr})",
+        "tooltip-format-ethernet": "Ethernet: {ifname} ({ipaddr})",
         "format-disconnected": "",
         "tooltip-format-disconnected": "No connection"
     },
@@ -91,7 +91,7 @@
         "on-click": "pavucontrol"
     },
     "custom/power": {
-        "format": "⏻ ",
+        "format": "⏻",
         "tooltip": false,
         "menu": "on-click",
         "menu-file": "$HOME/.config/waybar/power_menu.xml",
